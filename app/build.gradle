@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.lanyue.coolweather'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.lanyue.coolweather"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //加载图片和展示图片
+    implementation "com.github.bumptech.glide:glide:3.7.0"
+    //解析json数据
+    implementation "com.google.code.gson:gson:2.7"
+    //进行网络请求
+    implementation "com.squareup.okhttp3:okhttp:3.4.1"
+    //对数据进行操作
+    implementation 'org.litepal.guolindev:core:3.2.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation files('libs\\litepal-1.6.1-src.jar')
+    implementation files('libs\\litepal-2.0.0-src.jar')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
